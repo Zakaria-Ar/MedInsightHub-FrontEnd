@@ -6,10 +6,11 @@ export const RegistrationForm = (props) => {
   const [pass, setPass] = useState('');
   const [name, setName] = useState('');
   const [userType, setUserType] = useState(''); // No default selection
+  const [gender, setGender] = useState(''); // No default selection
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Name: ${name}, Email: ${email}, Password: ${pass}, UserType: ${userType}`);
+    console.log(`Name: ${name}, Email: ${email}, Password: ${pass}, UserType: ${userType}, Gender: ${gender}`);
     // Add logic to send registration data to the backend
   }
 
@@ -32,6 +33,17 @@ export const RegistrationForm = (props) => {
           <option value="doctor">Doctor</option>
           <option value="patient">Patient</option>
         </select>
+
+        {userType === 'patient' && (
+          <div>
+            <label htmlFor="gender">Select your gender:</label>
+            <select className="gender-field" id="gender" name="gender" onChange={(e) => setGender(e.target.value)} value={gender} required>
+              <option value="" disabled>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+        )}
 
         <button type="submit">Register</button>
       </form>

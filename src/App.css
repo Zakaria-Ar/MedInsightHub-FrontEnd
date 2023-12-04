@@ -6,7 +6,13 @@
   align-items: center;
   justify-content: center;
   color: white;
-  background-image: linear-gradient(79deg, #FBFBFF, #D62839 48%);
+  background-color: hsla(354, 68%, 49%, 1);
+  background-image:
+    radial-gradient(at 53% 47%, hsla(354, 68%, 49%, 1) 0px, transparent 50%),
+    radial-gradient(at 1% 1%, hsla(333, 100%, 3%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 1%, hsla(240, 100%, 99%, 1) 0px, transparent 50%),
+    radial-gradient(at 99% 98%, hsla(149, 88%, 42%, 1) 0px, transparent 50%),
+    radial-gradient(at 1% 98%, hsla(188, 55%, 23%, 1) 0px, transparent 50%);
 }
 
 .auth-form-container,
@@ -52,4 +58,8 @@ button {
   background: none;
   color: white;
   text-decoration: underline;
+}
+
+.gender-field{
+  margin-left: 20px;
 }
