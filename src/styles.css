@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css */
+.navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #007bff; /* Couleur bleue par défaut de Bootstrap, changez ceci selon vos préférences */
+}
+
+.navbar-brand {
+    padding: 0;
+    color: #100007; /* Couleur du texte pour le logo */
+}
+
+.navbar-brand:hover {
+    color: #100007; /* Couleur du texte pour le logo au survol (si nécessaire) */
+}
+
+.navbar .logo {
+    width: 35px;
+    height: 35px;
+}
+
+.navbar-text {
+    flex-grow: 1;
+    text-align: center;
+    color: #100007; /* Couleur du texte pour le titre */
+}
+
+.navbar-text h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: inherit; /* Hérite la couleur du .navbar-text */
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.navbar-nav .nav-link {
+    color: #100007; /* Couleur du texte pour les liens de navigation */
+}
+
+.navbar-nav {
+    color: #1a535c; /* Couleur du texte pour les liens de navigation au survol (si nécessaire) */
+}
+
+.nav-link:hover {
+    color: #1a535c; /* Couleur du texte pour les liens de navigation au survol (si nécessaire) */
+}
+
+@media (max-width: 991px) {
+    .navbar-text {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        text-align: center;
+        margin-top: 10px;
+        color: #1a535c; /* Assurez-vous que la couleur du texte reste la même sur les appareils mobiles */
+    }
+}
+
+/* Exemple d'ajout pour changer la couleur de fond de l'en-tête */
+.bg-custom {
+    background-color: #0cce6b; /* Nouvelle couleur de fond pour la barre de navigation */
+}
