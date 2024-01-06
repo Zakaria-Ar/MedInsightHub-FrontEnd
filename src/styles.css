@@ -1,92 +1,47 @@
-/* styles.css */
-/* Styles existants pour la navbar */
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-left: 1rem;
     padding-right: 1rem;
     background-color: #007bff;
+    height: 70px;
+}
+
+.navbar-toggler {
+    display: block;
+    border: none;
+    outline: none;
 }
 
 .navbar-brand {
-    padding: 0;
-    color: #100007;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.navbar-brand:hover {
-    color: #100007;
-}
-
-.navbar .logo {
-    width: 35px;
-    height: 35px;
-}
-
-.navbar-text {
-    flex-grow: 1;
-    text-align: center;
-    color: #100007;
-}
-
-.navbar-text h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: inherit;
-}
-
-.navbar-collapse {
-    flex-grow: 0;
-}
-
-.navbar-nav .nav-link {
-    color: #100007;
-}
-
-.navbar-nav {
-    color: #1a535c;
-}
-
-.nav-link:hover {
-    color: #1a535c;
-}
-
-@media (max-width: 991px) {
-    .navbar-text {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        top: 0;
-        text-align: center;
-        margin-top: 10px;
-        color: #1a535c;
-    }
-}
-
-.bg-custom {
-    background-color: #0cce6b;
-}
-
-/* Nouveaux styles pour la disposition de l'app */
-.app-container {
+.navbar-logo {
+    position: absolute;
+    right: 1rem;
     display: flex;
-    flex-direction: column; /* Empilement vertical */
-    height: 100vh;
+    align-items: center;
 }
 
-.main-content {
-    display: flex; /* Permet une disposition flexible des enfants */
-    flex-grow: 1; /* Prend tout l'espace disponible */
+.logo {
+    height: 50px;
+    width: auto;
 }
 
-.content-wrapper {
-    flex-grow: 1; /* Permet à la barre latérale et au contenu principal de remplir l'espace */
-    display: flex; /* Alignement horizontal de la sidebar et du contenu principal */
-}
-
-/* Styles de la sidebar */
 .sidebar {
     width: 250px;
     background-color: #007bff;
     color: #1a535c;
-    height: 100%; /* Adaptation à la hauteur du content-wrapper */
+    height: 100vh;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.active {
+    transform: translateX(0);
 }
 
 .sidebar a {
@@ -100,16 +55,30 @@
     background-color: #0cce6b;
     color: #ffffff;
 }
-/* Styles pour le footer */
-.footer {
-    background-color: #100007; /* Couleur de fond du footer */
-    color: white; /* Couleur du texte du footer */
-    padding: 10px 20px; /* Padding pour le footer */
-    text-align: center; /* Alignement du texte du footer */
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-/* Styles pour le container dans le footer */
+.main-content {
+    display: flex;
+    flex-grow: 1;
+}
+
+.content-wrapper {
+    flex-grow: 1;
+}
+
+.footer {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
 .footer .container {
-    margin-left: 250px; /* La même largeur que votre sidebar */
-    padding-right: 1rem; /* Un peu d'espace à droite */
+    margin-left: 250px;
+    padding-right: 1rem;
 }

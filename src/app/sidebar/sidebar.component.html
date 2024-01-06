@@ -1,11 +1,10 @@
 <!-- sidebar.component.html -->
-<div class="sidebar">
+<div class="sidebar" *ngIf="sidebarVisible">
     <nav>
-      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-      <a routerLink="/reports" routerLinkActive="active">Reports</a>
-      <a routerLink="/analytics" routerLinkActive="active">Analytics</a>
-      <a routerLink="/settings" routerLinkActive="active">Settings</a>
-      <!-- Add more links as needed -->
+        <a routerLink="/" routerLinkActive="active">Accueil</a>
+        <a routerLink="/discussions" routerLinkActive="active">Discussions</a>
+        <a routerLink="/analyses" routerLinkActive="active">Analyses</a>
+        <a routerLink="/profil" routerLinkActive="active">Profil</a>
+        <!-- Autres liens si nécessaire -->
     </nav>
-  </div>
-  
+</div>
