@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-    sidebarVisible: boolean = true; // La sidebar est visible par défaut
+  title = 'admin-panel-layout';
+  sideBarOpen = true;
 
-    toggleSd() {
-        this.sidebarVisible = !this.sidebarVisible;
-    }
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
+  }
 }
