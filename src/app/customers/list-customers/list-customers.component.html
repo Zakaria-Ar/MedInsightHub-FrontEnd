@@ -19,14 +19,14 @@
       </thead>
       <tbody>
         <!-- Repeat for each row -->
-        <tr>
-          <td>4564565</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>mdo</td>
-          <td>USA</td>
-          <td>New York</td>
-          <td>New York</td>
+        <tr *ngFor="let customer of customerList">
+          <td>{{customer._id}}</td>
+          <td>{{customer.firstName}}</td>
+          <td>{{customer.lastName}}</td>
+          <td>{{customer.phoneNumber}}</td>
+          <td>{{customer.emailAddress}}</td>
+          <td>{{customer.dob}}</td>
+          <td>{{customer.department}}</td>
         </tr>
         <!-- Other rows go here -->
       </tbody>
