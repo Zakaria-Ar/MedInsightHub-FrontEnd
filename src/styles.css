@@ -34,7 +34,7 @@
 
 .sidebar {
     width: 250px;
-    background-color: #0cce6b;
+    background-color: #D62839;
     color: #1a535c;
     height: 100vh;
     transition: transform 0.3s ease-in-out;
@@ -72,7 +72,7 @@
 }
 
 .footer {
-    background-color: #0cce6b;
+    background-color: #000000;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -86,3 +86,62 @@
     color: #ffffff;
     font-size: x-large;
 }
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex: 1;
+  }
+  
+  .main-content {
+    display: flex;
+    width: 100%;
+  }
+  
+  app-sidebar {
+    flex: 0 0 200px; /* Adjust width as needed */
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+  
+  router-outlet {
+    flex: 1;
+  }
+  /* Reset margins and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styles for the sidebar */
+  
+  
+  /* Styles for the router-outlet and its parent */
+  .content-wrapper {
+    display: flex;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    /* Remove any padding or margin that might be causing the issue */
+  }
+  
+  router-outlet {
+    display: block; /* Or 'flex' depending on your layout */
+    width: 100%; /* Ensure it takes up all the horizontal space */
+  }
+  :host {
+    display: block;
+    margin: 0; /* Override any margin */
+  }
+/* This targets all components placed by the router-outlet */
+router-outlet > * {
+    margin: 0;
+  }
+      

@@ -6,8 +6,10 @@ import { ForgotComponent } from './auth/forgot/forgot.component';
 import { LogoutComponent } from './auth/logout/logout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent},
   { path: 'register', component: NewUserComponent},
   { path: 'forgot-password', component: ForgotComponent},
