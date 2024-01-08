@@ -43,3 +43,12 @@
 .post-content {
   margin-top: 15px;
 }
+.posts .post {
+  /* ... existing styles ... */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.posts .post:hover {
+  background-color: #f3f3f3; /* Light grey background on hover */
+}

@@ -1,0 +1,29 @@
+<!-- post-details.component.html -->
+<div *ngIf="post" class="post-detail-container">
+    <h2 class="post-title">{{ post.title }}</h2>
+    <div class="post-meta">
+      <span>Author: Dr. {{ post.doctor_firstname }} {{ post.doctor_lastname }}</span> | 
+      <span>Posted on: {{ post.date_posted | date:'mediumDate' }}</span>
+    </div>
+    <p class="post-content">{{ post.content }}</p>
+    
+    <div class="post-tags">
+      <span class="tag" *ngFor="let tag of post.tags">{{ tag }}</span>
+    </div>
+    <div class="post-interactions">
+        <span class="like" (click)="onLikeClick()">{{ post.likes_count }} Likes</span>
+        <span class="comments" (click)="onCommentClick()">{{ post.comments_count }} Comments</span>
+    </div>
+  </div>
+  <!-- Placeholder for future comments section -->
+  <div class="comments-section">
+    <h3>Comments</h3>
+    <!-- Placeholder for displaying comments -->
+    <!-- Placeholder for adding new comments -->
+  </div>
+  <div *ngIf="!post">
+    <p>Post not found.</p>
+  </div>
+  
+  
+  

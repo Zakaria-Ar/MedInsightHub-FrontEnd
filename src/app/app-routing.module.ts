@@ -7,8 +7,10 @@ import { LogoutComponent } from './auth/logout/logout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent},
   { path: 'register', component: NewUserComponent},
@@ -20,6 +22,7 @@ const routes: Routes = [
   { path: 'invoices', loadChildren: () => import('./invoices/invoices.module').then(m => m.InvoicesModule) }, 
   { path: 'payments', loadChildren: () => import('./payments/payments.module').then(m => m.PaymentsModule) }, 
   { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) },
+  { path: 'post-details/:id', component: PostDetailsComponent },
   { path: '**', component: PageNotFoundComponent}
 ];
 

@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     DashboardComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    PostDetailsComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,

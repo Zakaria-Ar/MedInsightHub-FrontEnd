@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PostService} from '../post.service';
 
 interface Post {
   post_id: number;
@@ -67,7 +69,11 @@ export class HomeComponent implements OnInit {
     // Add more posts as needed
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  goToPostDetails(postId: number): void {
+    this.router.navigate(['/post-details', postId]);
+  }
 
   ngOnInit(): void { }
 }
