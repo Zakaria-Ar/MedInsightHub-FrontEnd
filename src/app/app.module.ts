@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { ProfileComponent } from './profil/profil.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { CreatePostComponent } from './create-post/create-post.component';
     PageNotFoundComponent,
     HomeComponent,
     PostDetailsComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    ProfileComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,

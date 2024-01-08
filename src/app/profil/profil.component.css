@@ -1,0 +1,54 @@
+/* profile.component.css */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-header {
+    margin-bottom: 2rem;
+  }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    border: 3px solid #4CAF50;
+  }
+  
+  .profile-details {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .profile-details h2,
+  .profile-details p {
+    margin-bottom: 0.5rem;
+  }
+  
+
+.btn-edit {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for size */
+    margin-top: 20px; /* Space from the content above */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor to pointer to indicate it's clickable */
+    text-decoration: none; /* Remove underline from any text */
+    display: inline-block; /* To apply padding and margin properly */
+  }
+  
+  .btn-edit:hover {
+    background-color: #367c39; /* Darker green on hover */
+  }
+  

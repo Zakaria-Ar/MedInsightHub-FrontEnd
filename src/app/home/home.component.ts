@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PostService} from '../post.service';
 
 interface Post {
   post_id: number;

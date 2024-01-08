@@ -9,11 +9,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { ProfileComponent } from './profil/profil.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'create-post', component: CreatePostComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'profil', component: ProfileComponent },
+  { path: 'edit-profile', component: EditProfileComponent },
   { path: 'login', component: LoginComponent},
   { path: 'register', component: NewUserComponent},
   { path: 'forgot-password', component: ForgotComponent},
