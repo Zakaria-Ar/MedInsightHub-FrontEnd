@@ -14,6 +14,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ConversationComponent } from './conversation/conversation.component';
 import { NewMessageComponent } from './new-message/new-message.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'messages', component: MessagesComponent },
   { path: 'new-message', component: NewMessageComponent },
+  { path: 'notifications', component: NotificationsComponent },
   { path: 'profil', component: ProfileComponent },
   { path: 'conversation/:id', component: ConversationComponent },
   { path: 'edit-profile', component: EditProfileComponent },

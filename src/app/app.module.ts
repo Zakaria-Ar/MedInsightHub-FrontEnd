@@ -18,6 +18,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ConversationComponent } from './conversation/conversation.component';
 import { NewMessageComponent } from './new-message/new-message.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NewMessageComponent } from './new-message/new-message.component';
     EditProfileComponent,
     MessagesComponent,
     ConversationComponent,
-    NewMessageComponent
+    NewMessageComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

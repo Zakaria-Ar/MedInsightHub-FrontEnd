@@ -1,0 +1,14 @@
+<!-- notifications.component.html -->
+<div class="notifications-container">
+    <h2>Notifications</h2>
+    <div class="notification-list">
+      <div *ngFor="let notification of notifications" class="notification-item">
+        <div class="notification-reason">{{ notification.user_notif_reason.username }}</div>
+        <div class="notification-type">{{ notification.notification_type }}</div>
+        <!-- Add other details as needed -->
+      </div>
+    </div>
+  </div>
+  <!-- notifications.component.html -->
+ 
+  
