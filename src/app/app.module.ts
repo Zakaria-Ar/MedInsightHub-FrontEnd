@@ -17,6 +17,7 @@ import { ProfileComponent } from './profil/profil.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ConversationComponent } from './conversation/conversation.component';
+import { NewMessageComponent } from './new-message/new-message.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ConversationComponent } from './conversation/conversation.component';
     ProfileComponent,
     EditProfileComponent,
     MessagesComponent,
-    ConversationComponent
+    ConversationComponent,
+    NewMessageComponent
   ],
   imports: [
     BrowserModule,
