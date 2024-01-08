@@ -16,6 +16,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { ProfileComponent } from './profil/profil.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { MessagesComponent } from './messages/messages.component';
+import { ConversationComponent } from './conversation/conversation.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MessagesComponent } from './messages/messages.component';
     CreatePostComponent,
     ProfileComponent,
     EditProfileComponent,
-    MessagesComponent
+    MessagesComponent,
+    ConversationComponent
   ],
   imports: [
     BrowserModule,

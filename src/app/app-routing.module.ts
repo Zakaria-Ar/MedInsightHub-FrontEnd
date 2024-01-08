@@ -12,6 +12,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { ProfileComponent } from './profil/profil.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { MessagesComponent } from './messages/messages.component';
+import { ConversationComponent } from './conversation/conversation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'messages', component: MessagesComponent },
   { path: 'profil', component: ProfileComponent },
+  { path: 'conversation/:id', component: ConversationComponent },
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'login', component: LoginComponent},
   { path: 'register', component: NewUserComponent},

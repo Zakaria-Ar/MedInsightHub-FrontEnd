@@ -11,7 +11,7 @@ export class MessageService {
       user_sender: { user_id: 2, username: 'JaneDoe' },
       user_receiver: { user_id: 1, username: 'DahaANA' },
       date_sent: new Date(),
-      text_message: 'Hi John, how are you?',
+      text_message: 'Hi Meryama, how are you?',
       message_received: true,
       message_received_at: new Date(),
       message_read: false,

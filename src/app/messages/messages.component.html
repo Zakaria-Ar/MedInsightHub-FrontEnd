@@ -1,7 +1,7 @@
 <!-- messages.component.html -->
 <div class="messages-container">
     <h2>Messages</h2>
-    <div *ngFor="let message of messages" class="message-card">
+      <div *ngFor="let message of messages" class="message-card" [routerLink]="['/conversation', message.message_id]">
       <div class="message-header">
         From: <strong>{{ message.user_sender.username }}</strong>
       </div>
