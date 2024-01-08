@@ -1,1 +1,22 @@
-<p>create-post works!</p>
+<!-- create-post.component.html -->
+<div class="create-post-container">
+    <h2>Create New Post</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" [(ngModel)]="newPost.title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="postType">Post Type</label>
+        <select class="form-control" id="postType" [(ngModel)]="newPost.post_type" name="post_type">
+          <!-- Add options for post type here -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="tags">Tags (comma-separated)</label>
+        <input type="text" class="form-control" id="tags" [(ngModel)]="tagsInput" name="tags">
+      </div>
+      <button type="submit" class="btn btn-primary">Create Post</button>
+    </form>
+  </div>
+  
