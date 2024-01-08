@@ -11,11 +11,13 @@ import { PostDetailsComponent } from './post-details/post-details.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { ProfileComponent } from './profil/profil.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { MessagesComponent } from './messages/messages.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'create-post', component: CreatePostComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'messages', component: MessagesComponent },
   { path: 'profil', component: ProfileComponent },
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'login', component: LoginComponent},

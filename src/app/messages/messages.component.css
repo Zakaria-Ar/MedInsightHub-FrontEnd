@@ -1,0 +1,28 @@
+/* messages.component.css */
+.messages-container {
+    padding: 1rem;
+  }
+  
+  .message-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .message-header {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .message-body {
+    margin-bottom: 0.5rem;
+  }
+  
+  .message-footer {
+    text-align: right;
+    color: #666;
+    font-size: 0.8rem;
+  }
+  
