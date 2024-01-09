@@ -1,0 +1,18 @@
+<!-- cases.component.html -->
+<div class="cases-container">
+    <h2>Cases</h2>
+    <div *ngFor="let caseItem of cases" class="case-item">
+      <h3>Case {{ caseItem.case_id }}</h3>
+      <p>{{ caseItem.content }}</p>
+      <a [href]="caseItem.documentUrl" target="_blank">View Document</a>
+      <div>
+        <label for="status-select-{{caseItem.case_id}}">Status:</label>
+        <select id="status-select-{{caseItem.case_id}}" [(ngModel)]="caseItem.status" (change)="updateCaseStatus(caseItem)">
+          <option value="Pending">Pending</option>
+          <option value="InProgress">In Progress</option>
+          <option value="Resolved">Resolved</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  

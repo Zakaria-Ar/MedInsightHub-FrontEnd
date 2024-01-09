@@ -1,0 +1,64 @@
+/* cases.component.css */
+.cases-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cases-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.case-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.case-item h3 {
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.case-item p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.case-item a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.case-item a:hover {
+    text-decoration: underline;
+}
+
+.case-item label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.case-item select {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+.case-item select:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 3px #66afe9;
+}

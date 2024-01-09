@@ -22,6 +22,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { ConnectionRequestsComponent } from './connection-requests/connection-requests.component';
 import { MyConnectionsComponent } from './my-connections/my-connections.component';
 import { DemandesComponent } from './demandes/demandes.component';
+import { CasesComponent } from './cases/cases.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { DemandesComponent } from './demandes/demandes.component';
     NotificationsComponent,
     ConnectionRequestsComponent,
     MyConnectionsComponent,
-    DemandesComponent
+    DemandesComponent,
+    CasesComponent
   ],
   imports: [
     BrowserModule,
