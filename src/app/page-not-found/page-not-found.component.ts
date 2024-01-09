@@ -1,4 +1,6 @@
+// page-not-found.component.ts
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-not-found',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-not-found.component.css']
 })
 export class PageNotFoundComponent {
+  
+  constructor(private router: Router) {}
 
+  goHome() {
+    this.router.navigate(['/']); // Navigate to your app's home route
+  }
 }
