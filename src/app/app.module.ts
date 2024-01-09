@@ -21,6 +21,7 @@ import { NewMessageComponent } from './new-message/new-message.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { ConnectionRequestsComponent } from './connection-requests/connection-requests.component';
 import { MyConnectionsComponent } from './my-connections/my-connections.component';
+import { DemandesComponent } from './demandes/demandes.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MyConnectionsComponent } from './my-connections/my-connections.componen
     NewMessageComponent,
     NotificationsComponent,
     ConnectionRequestsComponent,
-    MyConnectionsComponent
+    MyConnectionsComponent,
+    DemandesComponent
   ],
   imports: [
     BrowserModule,

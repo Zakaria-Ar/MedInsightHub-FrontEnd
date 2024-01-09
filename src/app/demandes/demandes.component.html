@@ -1,0 +1,18 @@
+<!-- demands.component.html -->
+<div class="demands-container">
+    <h2>Demands Requests</h2>
+    <div *ngFor="let request of demandRequests" class="demand-item">
+      <h3>From: {{ request.user_sender.username }}</h3>
+      <div>Date Sent: {{ request.date_sent | date:'medium' }}</div>
+      <div>Status: {{ request.demand_status }}</div>
+      <div *ngIf="request.documentUrl" class="document-link">
+        <a [href]="request.documentUrl" target="_blank">View Document</a>
+      </div>
+      <div class="demand-actions">
+        <button (click)="acceptRequest(request.demand_id)" class="btn btn-accept">Accept</button>
+        <button (click)="rejectRequest(request.demand_id)" class="btn btn-reject">Reject</button>
+        <button (click)="setToAwait(request.demand_id)" class="btn btn-await">Await</button>
+      </div>
+    </div>
+  </div>
+  
