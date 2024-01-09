@@ -16,6 +16,7 @@ import { ConversationComponent } from './conversation/conversation.component';
 import { NewMessageComponent } from './new-message/new-message.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { ConnectionRequestsComponent } from './connection-requests/connection-requests.component';
+import { MyConnectionsComponent } from './my-connections/my-connections.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'new-message', component: NewMessageComponent },
   { path: 'notifications', component: NotificationsComponent },
   { path: 'connection-request', component: ConnectionRequestsComponent },
+  { path: 'my-connections', component: MyConnectionsComponent },
   { path: 'profil', component: ProfileComponent },
   { path: 'conversation/:id', component: ConversationComponent },
   { path: 'edit-profile', component: EditProfileComponent },

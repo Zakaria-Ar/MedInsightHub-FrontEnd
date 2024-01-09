@@ -1,1 +1,14 @@
-<p>my-connections works!</p>
+<!-- my-connections.component.html -->
+<div class="my-connections-container">
+    <h2>My Connections</h2>
+    <div class="connection-list">
+      <div *ngFor="let connection of myConnections" class="connection-item">
+        <div class="connection-name">{{ connection.user_firstname }} {{ connection.user_lastname }}</div>
+        <div [ngClass]="{'online-status': connection.online, 'offline-status': !connection.online}">
+          {{ connection.online ? 'Online' : 'Offline' }}
+        </div>
+      </div>
+    </div>
+    <button (click)="navigateToConnectionRequests()" class="navigate-button">View Connection Requests</button>
+  </div>
+  
