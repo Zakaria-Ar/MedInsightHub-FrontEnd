@@ -1,8 +1,8 @@
-<!-- home.component.html -->
-<app-header></app-header>
-<app-sidebar></app-sidebar>
+<!-- app.component.html -->
+<app-header *ngIf="router.url !== '/login' && router.url !== '/register'"></app-header>
+<app-sidebar *ngIf="router.url !== '/login' && router.url !== '/register'"></app-sidebar>
 <div class="main-content">
-  <!-- Your home component's content goes here -->
   <router-outlet></router-outlet>
 </div>
+
 

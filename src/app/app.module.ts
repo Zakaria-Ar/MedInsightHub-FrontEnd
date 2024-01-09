@@ -22,6 +22,8 @@ import { ConnectionRequestsComponent } from './connection-requests/connection-re
 import { MyConnectionsComponent } from './my-connections/my-connections.component';
 import { DemandesComponent } from './demandes/demandes.component';
 import { CasesComponent } from './cases/cases.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { CasesComponent } from './cases/cases.component';
     ConnectionRequestsComponent,
     MyConnectionsComponent,
     DemandesComponent,
-    CasesComponent
+    CasesComponent,
+    RegistrationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
