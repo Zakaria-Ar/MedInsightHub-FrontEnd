@@ -1,0 +1,14 @@
+<!-- connections.component.html -->
+<div class="connections-container">
+    <h2>Connection Requests</h2>
+    <div *ngFor="let request of connectionRequests" class="connection-item">
+      <h3>From: {{ request.user_sender.username }}</h3>
+      <div class="connection-detail">Date Sent: {{ request.date_sent | date:'medium' }}</div>
+      <div class="connection-detail">Status: {{ request.connection_status }}</div>
+      <div class="connection-actions">
+        <button (click)="acceptRequest(request.connection_id)" class="btn btn-accept">Accept</button>
+        <button (click)="rejectRequest(request.connection_id)" class="btn btn-reject">Reject</button>
+      </div>
+    </div>
+  </div>
+  

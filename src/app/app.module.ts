@@ -19,6 +19,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { ConversationComponent } from './conversation/conversation.component';
 import { NewMessageComponent } from './new-message/new-message.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { ConnectionRequestsComponent } from './connection-requests/connection-requests.component';
+import { MyConnectionsComponent } from './my-connections/my-connections.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { NotificationsComponent } from './notifications/notifications.component'
     MessagesComponent,
     ConversationComponent,
     NewMessageComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    ConnectionRequestsComponent,
+    MyConnectionsComponent
   ],
   imports: [
     BrowserModule,
