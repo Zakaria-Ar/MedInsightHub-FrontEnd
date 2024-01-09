@@ -51,11 +51,54 @@ export class EditProfileComponent {
     // patient_date_of_birth and patient_gender are not needed for a doctor user type
   };
 
+  selectedFile?: File;
+  UserType = UserType;
+
   constructor() { }
 
   onSubmit(): void {
-    // Simulate a form submission
+    // Handle the file upload to Firebase first, then save the profile
+    if (this.selectedFile) {
+      // Upload file to Firebase and get the download URL
+      // After successful upload, assign the URL to this.user.profile_pic_url
+    }
     console.log('Profile updated:', this.user);
-    // In a real app, you would send this update to the backend server
+    // Send this.user to backend to update the profile
+  }
+
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      this.selectedFile = input.files[0];
+    }
   }
 }
+// This is a simplified example. You need to handle the upload and get the URL.
+/* onFileSelected(event: Event): void {
+  const input = event.target as HTMLInputElement;
+  if (input.files && input.files.length) {
+    const file = input.files[0];
+    // Create a reference to 'profile_pictures/username.jpg'
+    const fileRef = firebase.storage().ref().child(`profile_pictures/${this.user.username}.jpg`);
+    const uploadTask = fileRef.put(file);
+
+    uploadTask.on(
+      firebase.storage.TaskEvent.STATE_CHANGED,
+      (snapshot) => {
+        // Handle upload progress
+      },
+      (error) => {
+        // Handle errors
+        console.error(error);
+      },
+      () => {
+        // When the upload completes
+        uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+          this.user.profile_pic_url = downloadURL;
+          // Now you can save the user data with the new profile picture URL
+        });
+      }
+    );
+  }
+}
+*/

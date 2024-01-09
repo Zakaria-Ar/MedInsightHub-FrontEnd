@@ -22,6 +22,28 @@
         <label for="email">Email</label>
         <input type="email" id="email" [(ngModel)]="user.email" name="email" class="form-control" required>
       </div>
+      <div class="form-group">
+    <label for="profilePic">Profile Picture</label>
+    <input type="file" id="profilePic" (change)="onFileSelected($event)" name="profilePic" class="form-control">
+  </div>
+
+  <div *ngIf="user.user_type === UserType.Doctor">
+    <div class="form-group">
+      <label for="speciality">Speciality</label>
+      <input type="text" id="speciality" [(ngModel)]="user.doctor_specialty" name="speciality" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="yearsOfExperience">Years of Experience</label>
+      <input type="number" id="yearsOfExperience" [(ngModel)]="user.doctor_years_of_experience" name="yearsOfExperience" class="form-control">
+    </div>
+  </div>
+
+  <div *ngIf="user.user_type === UserType.Patient">
+    <div class="form-group">
+      <label for="dateOfBirth">Date of Birth</label>
+      <input type="date" id="dateOfBirth" [(ngModel)]="user.patient_date_of_birth" name="dateOfBirth" class="form-control">
+    </div>
+  </div>
       <!-- Add other fields as necessary -->
       <button type="submit" class="btn btn-success">Save Changes</button>
     </form>
