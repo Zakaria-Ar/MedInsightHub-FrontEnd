@@ -12,6 +12,9 @@
             <input type="text" [(ngModel)]="user.username" name="username" placeholder="Username" required>
         </div>
         <div class="form-group">
+            <input type="password" [(ngModel)]="user.password" name="password" placeholder="Password" required>
+        </div>
+        <div class="form-group">
             <input type="email" [(ngModel)]="user.email" name="email" placeholder="Email" required>
         </div>
         <div class="form-group">
@@ -26,7 +29,11 @@
         <!-- Conditional fields based on user type -->
         <div class="form-group" *ngIf="user.user_type === UserType.Doctor">
             <input type="text" [(ngModel)]="user.doctor_specialty" name="doctor_specialty" placeholder="Specialty">
-            <input type="number" [(ngModel)]="user.doctor_years_of_experience" name="doctor_years_of_experience" placeholder="Years of Experience">
+            <select [(ngModel)]="user.doctor_years_of_experience" name="doctor_years_of_experience">
+                <option [ngValue]="1">Less than 2 years</option>
+                <option [ngValue]="3">Between 2 and 5 years</option>
+                <option [ngValue]="5">More than 5 years</option>
+            </select>
         </div>
         <div class="form-group" *ngIf="user.user_type === UserType.Patient">
             <label for="patient_date_of_birth">Date of Birth:</label>

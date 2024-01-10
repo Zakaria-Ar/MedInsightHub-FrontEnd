@@ -1,46 +1,7 @@
 // src/app/registration/registration.component.ts
 import { Component } from '@angular/core';
-// src/app/models/user.dto.ts
-enum UserType {
-  Doctor,
-  Patient
-}
-
-enum UserGender {
-  Male,
-  Female
-}
-
-class UserDTO {
-  user_id: number;
-  firstname: string;
-  lastname: string;
-  username: string;
-  bio: string;
-  email: string;
-  user_type: UserType;
-  registration_date: Date;
-  profile_pic_url: string;
-  connections_count: number;
-  doctor_specialty?: string;
-  doctor_years_of_experience?: number;
-  patient_date_of_birth?: Date;
-  patient_gender?: UserGender;
-
-  constructor() {
-    this.user_id = 0;
-    this.firstname = '';
-    this.lastname = '';
-    this.username = '';
-    this.bio = '';
-    this.email = '';
-    this.user_type = UserType.Patient;
-    this.registration_date = new Date();
-    this.profile_pic_url = '';
-    this.connections_count = 0;
-  }
-}
-
+import { UserService } from '../services/user.service'; // Adjust the path as necessary
+import { User, UserType, UserGender } from '../models/user.model'; // Import the User model and enums
 
 @Component({
   selector: 'app-registration',
@@ -48,12 +9,22 @@ class UserDTO {
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
-  user: UserDTO = new UserDTO();
+  user: User = new User();
   UserType = UserType; // Expose UserType enum to the template
   UserGender = UserGender; // Expose UserGender enum to the template
 
+  constructor(private userService: UserService) {}
+
   onSubmit(): void {
-    console.log('Registration data:', this.user);
-    // TODO: Implement registration logic
+    this.userService.registerUser(this.user).subscribe(
+      response => {
+        console.log('User registered successfully', response);
+        // Handle successful registration
+      },
+      error => {
+        console.error('Registration error', error);
+        // Handle error
+      }
+    );
   }
 }
