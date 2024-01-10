@@ -39,4 +39,6 @@
   a:hover {
     text-decoration: underline;
   }
-  
+  a{
+    color: #45a049;
+  }

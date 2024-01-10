@@ -103,3 +103,10 @@ body {
   flex-grow: 1;
   background: #fff; /* Assuming a white background for the content */
 }
+/* Add this to your global styles.css or similar */
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}

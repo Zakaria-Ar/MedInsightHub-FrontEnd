@@ -1,6 +1,6 @@
 .registration-container {
     background: #fff;
-    max-width: 400px;
+    width: 500px;
     margin: 40px auto;
     padding: 20px;
     border-radius: 8px;
@@ -8,7 +8,7 @@
     text-align: center;
   }
   
-  input[type="text"], input[type="email"], select, textarea {
+  input[type="text"], input[type="email"],input [type="date"],input [type="number"], select, textarea {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -38,5 +38,15 @@
   
   a:hover {
     text-decoration: underline;
+  } 
+  a{
+    color: #45a049;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color: #333;
+    font-size: 16px;
   }
   

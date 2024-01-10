@@ -1,8 +1,15 @@
 <!-- app.component.html -->
-<app-header *ngIf="router.url !== '/login' && router.url !== '/register'"></app-header>
-<app-sidebar *ngIf="router.url !== '/login' && router.url !== '/register'"></app-sidebar>
-<div class="main-content">
+<div *ngIf="showHeaderAndSidebar">
+  <app-header></app-header>
+  <app-sidebar></app-sidebar>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div *ngIf="!showHeaderAndSidebar" class="centered-content">
   <router-outlet></router-outlet>
 </div>
+
 
 

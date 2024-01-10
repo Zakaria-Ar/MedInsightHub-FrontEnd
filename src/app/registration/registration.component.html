@@ -17,11 +17,11 @@
         <div class="form-group">
             <textarea [(ngModel)]="user.bio" name="bio" placeholder="Bio"></textarea>
         </div>
-        <div class="form-group">
-            <select [(ngModel)]="user.user_type" name="user_type">
-                <option [ngValue]="UserType.Doctor">Doctor</option>
-                <option [ngValue]="UserType.Patient">Patient</option>
-            </select>
+        <div class="form-group select-arrow">
+        <select [(ngModel)]="user.user_type" name="user_type">
+            <option [ngValue]="UserType.Doctor">Doctor</option>
+            <option [ngValue]="UserType.Patient">Patient</option>
+        </select>
         </div>
         <!-- Conditional fields based on user type -->
         <div class="form-group" *ngIf="user.user_type === UserType.Doctor">
@@ -29,7 +29,8 @@
             <input type="number" [(ngModel)]="user.doctor_years_of_experience" name="doctor_years_of_experience" placeholder="Years of Experience">
         </div>
         <div class="form-group" *ngIf="user.user_type === UserType.Patient">
-            <input type="date" [(ngModel)]="user.patient_date_of_birth" name="patient_date_of_birth" placeholder="Date of Birth">
+            <label for="patient_date_of_birth">Date of Birth:</label>
+            <input type="date" id="patient_date_of_birth" [(ngModel)]="user.patient_date_of_birth" name="patient_date_of_birth" placeholder="Date of Birth" required>
             <select [(ngModel)]="user.patient_gender" name="patient_gender">
                 <option [ngValue]="UserGender.Male">Male</option>
                 <option [ngValue]="UserGender.Female">Female</option>
