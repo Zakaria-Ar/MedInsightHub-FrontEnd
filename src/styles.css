@@ -8,7 +8,7 @@
 /* Styles for the sidebar */
 .sidebar {
   width: 250px;
-  background-color: #FF9900;
+  background-color: #232F3E;
   color: #fff;
   height: 100vh;
   position: fixed;
@@ -29,7 +29,7 @@
 
 .sidebar nav a.active,
 .sidebar nav a:hover {
-  background-color: #232F3E;
+  background-color: #FF9900;
   color: #ffffff;
 }
 
@@ -49,7 +49,7 @@ router-outlet > * {
 
 /* Footer */
 .footer {
-  background-color: #FF9900;
+  background-color: #232F3E;
   color: white;
   text-align: center;
   padding: 10px 0;
@@ -72,7 +72,7 @@ body {
 
 /* Styles for navbar */
 .navbar {
-  background-color: #FF9900;
+  background-color: #232F3E;
   height: 70px;
   position: fixed;
   width: 100%;

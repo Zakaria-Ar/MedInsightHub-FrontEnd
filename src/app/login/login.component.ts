@@ -1,5 +1,7 @@
-// src/app/login/login.component.ts
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +12,21 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
 
+  constructor(private authService: AuthService,private userService : UserService, private router: Router) {}
+
   onLogin(): void {
-    console.log('Login data:', { username: this.username, password: this.password });
-    // TODO: Implement login logic
+    this.authService.login(this.username, this.password).subscribe({
+      next: (response) => {
+        console.log('Login successful');
+        this.userService.setToken(response.token);
+        console.log(response.token);
+        // Navigate to home page
+        this.router.navigate(['/home']);
+      },
+      error: (error) => {
+        console.error('Login failed', error);
+        // Handle error
+      }
+    });
   }
 }
