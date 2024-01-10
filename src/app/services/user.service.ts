@@ -15,6 +15,12 @@ export class UserService {
   registerUser(user: User): Observable<any> {
     return this.http.post(`${this.baseUrl}`+ '/create', user);
   }
+  setToken(token: string){
+    localStorage.setItem("token", token);
+  }
+  getToken(){
+    localStorage.getItem("token");
+  }
 
   // Other methods as needed
 }

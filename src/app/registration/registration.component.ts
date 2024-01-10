@@ -19,6 +19,8 @@ export class RegistrationComponent {
     this.userService.registerUser(this.user).subscribe(
       response => {
         console.log('User registered successfully', response);
+        this.userService.setToken(response.token);
+        console.log(response.token);
         // Handle successful registration
       },
       error => {
