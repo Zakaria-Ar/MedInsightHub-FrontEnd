@@ -32,12 +32,12 @@
 
 .tag {
   display: inline-block;
-  background-color: #eef;
-  color: #557;
+  background-color: #FF9900 !important;
+  color: black;
   padding: 3px 8px;
   margin-right: 5px;
   border-radius: 4px;
-  font-size: 0.85em;
+  font-size: 1em;
 }
 
 .post-content {
@@ -63,14 +63,43 @@
 }
 
 .btn-primary {
-  background-color: #4CAF50;
-  border-color: #4CAF50;
+  background-color: #FF9900;
+  border-color: #FF9900;
 }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-  background-color: darken(#4CAF50, 10%);
-  border-color: darken(#4CAF50, 10%);
+  background-color: darken(#FF9900, 10%);
+  border-color: darken(#FF9900, 10%);
 }
 
+h2{
+  color: white;
+}
+
+.container{
+  min-width: 100vw;
+  transform: translateX(-10vw);
+}
+
+.mb-3{
+  cursor: pointer;
+  position: relative;
+}
+
+.post-type{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.post-status{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.card-title{
+  font-weight: bolder;
+}

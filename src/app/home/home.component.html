@@ -12,7 +12,9 @@
           <div class="posts">
             <div *ngFor="let post of posts" class="card mb-3" [routerLink]="['/post-details', post.post_id]">
               <div class="card-body">
-                <h3 class="card-title">{{ post.title }} <span class="post-type">{{ post.post_type }}</span></h3>
+                <h3 class="card-title" style="width: 90%;">{{ post.title }} <span class="post-type">{{ post.post_type }}</span>
+                  <span class="post-status">{{ post.post_status }}</span>
+                </h3>
                 <p class="card-text">Author: Dr. {{ post.doctor_firstname }} {{ post.doctor_lastname }}</p>
                 <p class="card-text">Posted on: {{ post.date_posted | date:'medium' }}</p>
                 <div class="post-stats">

@@ -35,3 +35,9 @@ mat-toolbar {
       width: 160px;
     }
   }
+
+  .navbar{
+    background: #1111119a;
+    -webkit-backdrop-filter : blur(100px) saturate(150%) contrast(110%);
+    backdrop-filter: blur(5px) saturate(150%) contrast(110%);
+  }

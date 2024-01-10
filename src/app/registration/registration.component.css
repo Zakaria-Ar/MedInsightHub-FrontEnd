@@ -1,10 +1,12 @@
 .registration-container {
-    background: #fff;
+    background: #1111119a;
     width: 500px;
-    margin: 40px auto;
+    margin: 0px auto;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter : blur(5px) saturate(150%) contrast(110%);
+    backdrop-filter: blur(5px) saturate(150%) contrast(110%);
     text-align: center;
   }
   
@@ -46,7 +48,10 @@
     display: block;
     margin-bottom: 5px;
     margin-right: 10px;
-    color: #333;
+    color: white;
     font-size: 16px;
   }
   
+  h2,p{
+    color: white;
+  }
