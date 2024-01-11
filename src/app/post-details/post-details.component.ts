@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 interface Post {
   post_id: number;
@@ -32,9 +33,12 @@ export class PostDetailsComponent implements OnInit {
   }
   post: Post | undefined;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router, private authservice: AuthService) {}
 
   ngOnInit(): void {
+    if (this.authservice.getToken()==null){
+      this.router.navigate(['/'])
+    }
     const postId = +this.route.snapshot.params['id'];
     // Temporary mock data, similar to what's in HomeComponent
     const posts: Post[] = [

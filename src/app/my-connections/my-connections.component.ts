@@ -1,6 +1,7 @@
 // src/app/my-connections/my-connections.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 interface ConnectionDTO {
   connection_id: number;
@@ -25,9 +26,13 @@ export class MyConnectionsComponent implements OnInit {
     // ... Add more mock connections as needed
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authservice: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.authservice.getToken()==null){
+      this.router.navigate(['/'])
+    }
+  }
 
   navigateToConnectionRequests(): void {
     this.router.navigate(['/connection-request']);

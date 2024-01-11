@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 interface User {
   user_id: number;
@@ -30,9 +31,12 @@ export class ConversationComponent implements OnInit {
     username: 'JohnDoe', // This would be the logged in user's username
   };
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router, private authservice: AuthService) {}
 
   ngOnInit(): void {
+    if (this.authservice.getToken()==null){
+      this.router.navigate(['/'])
+    }
     // Extract the conversation ID from the URL
     const conversationId = this.route.snapshot.params['id'];
 

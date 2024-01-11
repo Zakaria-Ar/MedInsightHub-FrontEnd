@@ -2,6 +2,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ConnectionRequestsService } from '../connection-requests.service'; // Update path as necessary
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 
 export enum ConnectionStatus {
@@ -33,9 +35,12 @@ export class ConnectionRequestsComponent implements OnInit {
   // Now TypeScript knows what a Connection is
   connectionRequests: Connection[] | undefined ; // Initialize it as an empty array
 
-  constructor(private connectionRequestsService: ConnectionRequestsService) { }
+  constructor(private connectionRequestsService: ConnectionRequestsService, private router: Router, private authservice: AuthService) { }
 
   ngOnInit(): void {
+    if (this.authservice.getToken()==null){
+      this.router.navigate(['/'])
+    }
     this.connectionRequests = this.connectionRequestsService.getRequests();
   }
 

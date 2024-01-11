@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 interface Post {
   post_id: number;
@@ -68,11 +69,15 @@ export class HomeComponent implements OnInit {
     // Add more posts as needed
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authservice: AuthService) { }
 
   goToPostDetails(postId: number): void {
     this.router.navigate(['/post-details', postId]);
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    if (this.authservice.getToken()==null){
+      this.router.navigate(['/'])
+    }
+   }
 }

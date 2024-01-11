@@ -1,6 +1,8 @@
 // src/app/cases/cases.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CasesService } from '../cases.service';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 enum CaseStatus {
   Pending = "Pending",
@@ -23,11 +25,16 @@ interface Case {
 export class CasesComponent implements OnInit {
   cases: Case[] = [];
 
-  constructor(private casesService: CasesService) { }
+  constructor(private casesService: CasesService, private authservice: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    if (this.authservice.getToken()==null){
+      this.router.navigate(['/'])
+    }
     this.cases = this.casesService.getCases();
-  }
+    
+   }
+  
 
   updateCaseStatus(caseItem: Case): void {
     // Update the status of the case

@@ -1,5 +1,7 @@
 // create-post.component.ts
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-create-post',
@@ -36,6 +38,12 @@ export class CreatePostComponent {
       });
     }
   }
+  constructor(private router: Router, private authservice: AuthService) {}
+  ngOnInit(): void {
+    if (this.authservice.getToken()==null){
+      this.router.navigate(['/'])
+    }
+}
 }
 // Pseudo-code for Firebase upload
 /*onFileSelected(event: Event): void {

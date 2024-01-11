@@ -1,5 +1,7 @@
 // new-message.component.ts
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-new-message',
@@ -18,4 +20,10 @@ export class NewMessageComponent {
     console.log('Sending message:', this.newMessage);
     this.newMessage = { recipient: '', content: '' }; // Clear the form
   }
+  constructor(private router: Router, private authservice: AuthService) {}
+  ngOnInit(): void {
+    if (this.authservice.getToken()==null){
+      this.router.navigate(['/'])
+    }
+}
 }

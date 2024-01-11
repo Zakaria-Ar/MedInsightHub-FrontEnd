@@ -2,6 +2,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { DemandsService } from '../demands.service'; // Update path as necessary
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 
 export enum DemandStatus {
@@ -33,9 +35,12 @@ export class DemandesComponent implements OnInit {
   // Now TypeScript knows what a Connection is
   demandRequests: Demand[] | undefined ; // Initialize it as an empty array
 
-  constructor(private demandsService: DemandsService)  { }
+  constructor(private demandsService: DemandsService, private router: Router, private authservice: AuthService)  { }
 
   ngOnInit(): void {
+    if (this.authservice.getToken()==null){
+      this.router.navigate(['/'])
+    }
     // Initialize connectionRequests with an empty array or fetch from a service
     this.demandRequests = this.demandsService.getDemands();
   }

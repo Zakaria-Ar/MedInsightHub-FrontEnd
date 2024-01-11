@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 enum UserType {
   Doctor,
@@ -54,7 +56,6 @@ export class EditProfileComponent {
   selectedFile?: File;
   UserType = UserType;
 
-  constructor() { }
 
   onSubmit(): void {
     // Handle the file upload to Firebase first, then save the profile
@@ -72,6 +73,12 @@ export class EditProfileComponent {
       this.selectedFile = input.files[0];
     }
   }
+  constructor(private router: Router, private authservice: AuthService) {}
+  ngOnInit(): void {
+    if (this.authservice.getToken()==null){
+      this.router.navigate(['/'])
+    }
+}
 }
 // This is a simplified example. You need to handle the upload and get the URL.
 /* onFileSelected(event: Event): void {

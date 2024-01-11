@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 enum NotificationType {
     NewConnection = "New Connection Request",
@@ -67,7 +69,11 @@ export class NotificationsComponent implements OnInit {
     },
     // Add more mock notifications as needed
   ];
+  constructor(private router: Router, private authservice: AuthService) {}
   ngOnInit(): void {
+    if (this.authservice.getToken()==null){
+      this.router.navigate(['/'])
+    }
     // You might want to initialize your notifications here
     // If you were fetching from a service, you would call it here
   }

@@ -1,21 +1,23 @@
 <div class="profil-container">
     <div class="profil-header">
-      <img [src]="user.profile_pic_url" alt="Profil Picture" class="profil-pic">
-      <h2>{{ user.firstname }} {{ user.lastname }}</h2>
-      <p>{{ user.bio }}</p>
+      <img [src]="user?.profile_pic_url" alt="Profil Picture" class="profil-pic">
+      <h2>{{ user?.firstname }} {{ user?.lastname }}</h2>
+      <p>{{ user?.bio }}</p>
     </div>
   
     <div class="profile-details">
-      <p><strong>Username:</strong> {{ user.username }}</p>
-      <p><strong>Email:</strong> {{ user.email }}</p>
-      <p><strong>User Type:</strong> {{ user.user_type === 0 ? 'Doctor' : 'Patient' }}</p>
-      <p><strong>Registered:</strong> {{ user.registration_date | date: 'mediumDate' }}</p>
-      <p><strong>Connections:</strong> {{ user.connections_count }}</p>
-      <div *ngIf="user.user_type === 0">
-        <p><strong>Specialty:</strong> {{ user.doctor_specialty }}</p>
-        <p><strong>Years of Experience:</strong> {{ user.doctor_years_of_experience }}</p>
+      <p><strong>Username:</strong> {{ user?.username }}</p>
+      <p><strong>Email:</strong> {{ user?.email }}</p>
+      <p><strong>User Type:</strong> {{ user?.user_type === 0 ? 'Doctor' : 'Patient' }}</p>
+      <p><strong>Registered:</strong> {{ user?.registration_date | date: 'mediumDate' }}</p>
+      <p><strong>Connections:</strong> {{ user?.connections_count }}</p>
+      <div *ngIf="user?.user_type === 0">
+        <p><strong>Specialty:</strong> {{ user?.doctor_specialty }}</p>
+        <p><strong>Years of Experience:</strong> {{ user?.doctor_years_of_experience }}</p>
       </div>
       <button class="btn btn-edit" routerLink="/edit-profile">Edit Profile</button>
+      <button class="btn btn-logout" (click)="logout()">Logout</button>
+
       <!-- Add patient specific fields here if needed -->
     </div>
     <!-- ... rest of your profile.component.html ... -->
