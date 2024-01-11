@@ -25,6 +25,7 @@ import { DemandesComponent } from './demandes/demandes.component';
 import { CasesComponent } from './cases/cases.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { LoginComponent } from './login/login.component';
     DemandesComponent,
     CasesComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,

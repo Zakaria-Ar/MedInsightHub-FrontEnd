@@ -16,6 +16,7 @@ import { DemandesComponent } from './demandes/demandes.component';
 import { CasesComponent } from './cases/cases.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 const routes: Routes = [
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'create-post', component: CreatePostComponent },
+  { path: 'search-results', component: SearchResultsComponent },
   { path: 'home', component: HomeComponent },
   { path: 'messages', component: MessagesComponent },
   { path: 'new-message', component: NewMessageComponent },

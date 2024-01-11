@@ -1,5 +1,6 @@
 // header.component.ts
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-header',
@@ -11,5 +12,12 @@ export class HeaderComponent {
 
     toggleSd() {
         this.toggleSidebar.emit();
+    }
+    searchQuery: string = '';
+
+    constructor(private router: Router) {}
+
+    search() {
+        this.router.navigate(['/search-results'], { queryParams: { query: this.searchQuery } });
     }
 }

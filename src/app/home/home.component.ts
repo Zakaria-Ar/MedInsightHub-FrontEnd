@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { PostService } from '../post.service';
+import { PostService } from '../services/post.service';
 import { homePosts } from '../models/homePosts.model'
 
 @Component({

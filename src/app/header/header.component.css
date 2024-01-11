@@ -1,43 +1,49 @@
-mat-toolbar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  
-  ul {
-    li {
-      list-style: none;
-    }
-  }
-  button {
-    outline: none;
-    border: 0;
-    background: transparent;
-  }
-  .user {
-    font-size: 14px;
-  }
-  mat-toolbar {
-    background: #f7f7f7;
-  }
-  .user-image {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    &-icon {
-      height: 18px;
-      font-size: 16px;
-    }
-  }
-  
-  ::ng-deep {
-    .mat-menu-content {
-      width: 160px;
-    }
-  }
+.navbar {
+  background: #1111119a;
+  -webkit-backdrop-filter: blur(100px) saturate(150%) contrast(110%);
+  backdrop-filter: blur(5px) saturate(150%) contrast(110%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px; /* Adjust padding as needed */
+}
 
-  .navbar{
-    background: #1111119a;
-    -webkit-backdrop-filter : blur(100px) saturate(150%) contrast(110%);
-    backdrop-filter: blur(5px) saturate(150%) contrast(110%);
-  }
+.navbar-brand {
+  flex-grow: 1; /* Allows brand name to take available space */
+  color: white; /* Adjust the color as needed */
+  font-size: 20px; /* Adjust the font size as needed */
+}
+
+.search-panel {
+  display: flex;
+  align-items: center;
+  flex-grow: 2; /* Allows search panel to take available space */
+}
+
+.search-panel .form-control {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px; /* Space between input and button */
+  flex-grow: 1; /* Allows input field to expand */
+}
+
+.search-panel .btn-search {
+  background-color: #FF9900;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 12em;
+}
+
+.search-panel .btn-search:hover {
+  background-color: #FF9900;
+}
+
+.navbar-logo {
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Keeps the aspect ratio of the logo */
+}
+
