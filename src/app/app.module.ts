@@ -27,6 +27,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { MyPostsComponent } from './my-posts/my-posts.component';
+import { ModelComponent } from './model/model.component';
+import { MessagingComponent } from './messaging/messaging.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { MyPostsComponent } from './my-posts/my-posts.component';
     RegistrationComponent,
     LoginComponent,
     SearchResultsComponent,
-    MyPostsComponent
+    MyPostsComponent,
+    ModelComponent,
+    MessagingComponent
   ],
   imports: [
     BrowserModule,
