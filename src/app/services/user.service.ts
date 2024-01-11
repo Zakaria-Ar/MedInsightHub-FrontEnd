@@ -19,10 +19,10 @@ export class UserService {
     localStorage.setItem("token", token);
   }
   getToken(){
-    localStorage.getItem("token");
+    return localStorage.getItem("token");
   }
-  getUserInfo(): Observable<User> {
-    return this.http.get<User>(`${this.baseUrl}`,{headers: new HttpHeaders({"Authorization" : "Bearer "+this.getToken() })});
+  getUserInfo() {
+    return this.http.get(`${this.baseUrl}`,{headers: new HttpHeaders({"Authorization" : "Bearer "+this.getToken() })});
   }
 
   updateUser(user: User): Observable<any> {
