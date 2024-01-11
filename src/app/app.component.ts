@@ -18,7 +18,7 @@ export class AppComponent {
       filter((event: Event): event is NavigationEnd => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       this.showHeaderAndSidebar = (event.url === '/create-post' || event.url === '/home' || event.url === '/messages'|| event.url === '/new-message'|| event.url === '/notifications'|| event.url === '/connection-request'|| event.url === '/cases'|| event.url === '/demandes'|| event.url === '/my-connections'
-      || event.url === '/profil'|| event.url === '/conversation/:id'|| event.url === '/edit-profile'|| event.url === '/post-details/:id');
+      || event.url === '/profil'|| event.url.startsWith('/conversation') || event.url === '/edit-profile'|| event.url.startsWith('/post-details') );
     });
   }
 
