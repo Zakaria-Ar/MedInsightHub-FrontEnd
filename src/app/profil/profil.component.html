@@ -10,7 +10,7 @@
     <div class="profile-details">
       <p><strong>Username:</strong> {{ user?.username }}</p>
       <p><strong>Email:</strong> {{ user?.email }}</p>
-      <p><strong>User Type:</strong> {{ user?.user_type === 0 ? 'Doctor' : 'Patient' }}</p>
+      <p><strong>User Type:</strong> {{ user?.user_type }}</p>
       <p><strong>Registered:</strong> {{ user?.registration_date | date: 'mediumDate' }}</p>
       <p><strong>Connections:</strong> {{ user?.connections_count }}</p>
       <div *ngIf="user?.user_type === 0">

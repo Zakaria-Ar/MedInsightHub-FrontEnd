@@ -25,8 +25,9 @@ export class UserService {
     return this.http.get(`${this.baseUrl}`,{headers: new HttpHeaders({"Authorization" : "Bearer "+this.getToken() })});
   }
 
-  updateUser(user: User): Observable<any> {
-    return this.http.put(`${this.baseUrl}/update`, user);
+  updateUserProfile(user: User): Observable<any> {
+    const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + this.getToken() });
+    return this.http.put(`${this.baseUrl}`, user, { headers });
   }
 
   // Other methods as needed

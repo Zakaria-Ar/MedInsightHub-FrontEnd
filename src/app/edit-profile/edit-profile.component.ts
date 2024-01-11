@@ -1,70 +1,38 @@
-import { Component } from '@angular/core';
+// src/app/edit-profile/edit-profile.component.ts
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 import { AuthService } from '../services/auth.service';
+import { User, UserGender, UserType } from '../models/user.model'; // Assuming you have a User model
 
-enum UserType {
-  Doctor,
-  Patient
-}
-
-enum UserGender {
-  Male,
-  Female,
-  Other
-}
-
-interface UserDTO {
-  user_id: number;
-  firstname: string;
-  lastname: string;
-  username: string;
-  bio: string;
-  email: string;
-  user_type: UserType;
-  registration_date: Date;
-  profile_pic_url: string;
-  connections_count: number;
-  doctor_specialty?: string;
-  doctor_years_of_experience?: number;
-  patient_date_of_birth?: Date;
-  patient_gender?: UserGender;
-}
 
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
   styleUrls: ['./edit-profile.component.css']
 })
-export class EditProfileComponent {
-  // Initialize with mock user data
-  user: UserDTO = {
-    user_id: 1,
-    firstname: 'John',
-    lastname: 'Doe',
-    username: 'johndoe',
-    bio: 'A passionate healthcare professional',
-    email: 'johndoe@example.com',
-    user_type: UserType.Doctor,
-    registration_date: new Date(),
-    profile_pic_url: 'path/to/your/profilepic.jpg',
-    connections_count: 150,
-    doctor_specialty: 'Cardiology',
-    doctor_years_of_experience: 10,
-    // patient_date_of_birth and patient_gender are not needed for a doctor user type
-  };
-
+export class EditProfileComponent implements OnInit {
+  user: User = new User(); // Initialize with an empty User object
   selectedFile?: File;
-  UserType = UserType;
+  UserType = UserType; // To use UserType enum in the template
+  UserGender = UserGender; // To use UserGender enum in the template
 
+  constructor(private userService: UserService, private authService: AuthService, private router: Router) {}
 
-  onSubmit(): void {
-    // Handle the file upload to Firebase first, then save the profile
-    if (this.selectedFile) {
-      // Upload file to Firebase and get the download URL
-      // After successful upload, assign the URL to this.user.profile_pic_url
+  ngOnInit(): void {
+    if (!this.authService.getToken()) {
+      this.router.navigate(['/login']);
+    } else {
+      // Load user data from backend
+      this.userService.getUserInfo().subscribe(
+        (userData: any) => {
+          this.user = userData;
+        },
+        error => {
+          console.error('Error loading user data:', error);
+        }
+      );
     }
-    console.log('Profile updated:', this.user);
-    // Send this.user to backend to update the profile
   }
 
   onFileSelected(event: Event): void {
@@ -73,13 +41,26 @@ export class EditProfileComponent {
       this.selectedFile = input.files[0];
     }
   }
-  constructor(private router: Router, private authservice: AuthService) {}
-  ngOnInit(): void {
-    if (this.authservice.getToken()==null){
-      this.router.navigate(['/'])
+
+  onSubmit(): void {
+    if (this.selectedFile) {
+      // Upload file to Firebase and get the download URL
+      // After successful upload, assign the URL to this.user.profile_pic_url
     }
+
+    // Update user profile
+    this.userService.updateUserProfile(this.user).subscribe(
+      response => {
+        // Handle successful update
+        this.router.navigate(['/profil']); // Redirect to the profile page
+      },
+      error => {
+        console.error('Error updating profile:', error);
+      }
+    );
+  }
 }
-}
+
 // This is a simplified example. You need to handle the upload and get the URL.
 /* onFileSelected(event: Event): void {
   const input = event.target as HTMLInputElement;
