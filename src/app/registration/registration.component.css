@@ -21,7 +21,7 @@
   button {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #FF9900;
     color: white;
     border: none;
     border-radius: 4px;
@@ -30,7 +30,7 @@
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #FF9900;
   }
   
   a {
@@ -42,7 +42,7 @@
     text-decoration: underline;
   } 
   a{
-    color: #45a049;
+    color: #FF9900;
   }
   label {
     display: block;
