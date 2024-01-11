@@ -1,6 +1,6 @@
 // messages.component.ts
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from '../message.service'; // Update the path as necessary
+import { MessageService } from '../services/message.service'; // Update the path as necessary
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 

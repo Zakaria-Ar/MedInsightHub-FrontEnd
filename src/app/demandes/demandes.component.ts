@@ -1,7 +1,7 @@
 // connection-requests.component.ts
 
 import { Component, OnInit } from '@angular/core';
-import { DemandsService } from '../demands.service'; // Update path as necessary
+import { DemandsService } from '../services/demands.service'; // Update path as necessary
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 

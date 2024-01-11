@@ -1,6 +1,6 @@
 // src/app/cases/cases.component.ts
 import { Component, OnInit } from '@angular/core';
-import { CasesService } from '../cases.service';
+import { CasesService } from '../services/cases.service';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
