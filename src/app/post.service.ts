@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Post } from './models/post.model'; // Update the path as necessary
+import { Post } from './models/post.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
-  constructor() { }
+  private apiUrl = 'http://localhost:8080/post'; // Update with your API URL
 
+  constructor(private http: HttpClient) {}
+  getToken(){
+    return localStorage.getItem("token");
+  }
+
+  createPost(post: Post): Observable<Post> {
+    return this.http.post<Post>(this.apiUrl+ "/create/0", post, {headers: new HttpHeaders({"Authorization" : "Bearer "+this.getToken() })});
+  }
   getPosts(): Observable<Post[]> {
     const posts = JSON.parse(localStorage.getItem('posts') || '[]');
     return of(posts);

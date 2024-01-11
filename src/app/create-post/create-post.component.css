@@ -19,8 +19,8 @@
 }
 
 .btn-primary {
-  background-color: #4CAF50;
-  border-color: #4CAF50;
+  background-color: #FF9900;
+  border-color: #FF9900;
   padding: 10px 20px;
   color: white;
   border-radius: 4px;
@@ -28,8 +28,8 @@
 }
 
 .btn-primary:hover {
-  background-color: #45a049;
-  border-color: #45a049;
+  background-color: #FF9900;
+  border-color: #FF9900;
 }
 
 label {

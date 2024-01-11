@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-create-post',
@@ -10,41 +11,56 @@ import { AuthService } from '../services/auth.service';
 })
 export class CreatePostComponent {
   newPost = {
+    post_id: 1,
     title: '',
     post_type: '',
     tags: [] as string[],
-    content: '',
-    // Assume that documents will store the URL after uploading to Firebase
-    documents: [] as string[] // This will be an array of URLs
+    post_text_content: '',
+    documents: [] as string[]
   };
   tagsInput = '';
   selectedFiles: FileList | null | undefined;
 
+  constructor(private postService: PostService, private router: Router, private authService: AuthService) {}
+
+  ngOnInit(): void {
+    if (!this.authService.getToken()) {
+      this.router.navigate(['/login']);
+    }
+  }
+
   onSubmit(): void {
     this.newPost.tags = this.tagsInput.split(',').map(tag => tag.trim());
-    // Here you would handle uploading files to Firebase and then saving the post
-    console.log(this.newPost);
+
+    // Assuming you have a method to handle file upload to Firebase
+    this.uploadFilesToFirebase().then(() => {
+      this.postService.createPost(this.newPost).subscribe(
+        response => {
+          console.log('Post created:', response);
+          this.router.navigate(['/home']);
+          // Redirect or handle response
+        },
+        error => {
+          console.error('Error creating post:', error);
+        }
+      );
+    });
   }
 
   onFileSelected(event: Event): void {
     this.selectedFiles = (event.target as HTMLInputElement).files;
-    if (this.selectedFiles) {
-      // You would upload each selected file to Firebase and retrieve their URLs
-      // For now, we'll just log the file names
-      Array.from(this.selectedFiles).forEach((file) => {
-        console.log(file.name);
-        // After uploading to Firebase, push the file URL to the newPost.documents array
-        // this.newPost.documents.push(uploadedFileURL);
-      });
-    }
+    // File handling logic here
   }
-  constructor(private router: Router, private authservice: AuthService) {}
-  ngOnInit(): void {
-    if (this.authservice.getToken()==null){
-      this.router.navigate(['/'])
-    }
+
+  uploadFilesToFirebase(): Promise<void> {
+    // Implement the logic to upload files to Firebase and get their URLs
+    return new Promise((resolve) => {
+      // Placeholder logic
+      resolve();
+    });
+  }
 }
-}
+
 // Pseudo-code for Firebase upload
 /*onFileSelected(event: Event): void {
   this.selectedFiles = (event.target as HTMLInputElement).files;
