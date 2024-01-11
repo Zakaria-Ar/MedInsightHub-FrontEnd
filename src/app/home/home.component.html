@@ -18,14 +18,13 @@
                 <p class="card-text">Author: Dr. {{ post.doctor_firstname }} {{ post.doctor_lastname }}</p>
                 <p class="card-text">Posted on: {{ post.date_posted | date:'medium' }}</p>
                 <div class="post-stats">
-                  <span class="card-text">Views: {{ post.views_count }}</span>
-                  <span class="card-text">Likes: {{ post.likes_count }}</span>
+                  <span class="card-text" [ngClass]="{'viewed':post.viewed}">Views: {{ post.views_count }}</span>
+                  <span class="card-text" [ngClass]="{'liked':post.liked}">Likes: {{ post.likes_count }}</span>
                   <span class="card-text">Comments: {{ post.comments_count }}</span>
                 </div>
                 <div class="post-tags mt-3">
                   <span class="tag badge bg-info" *ngFor="let tag of post.tags">{{ tag }}</span>
                 </div>
-                <p class="card-text post-content mt-3">{{ post.content }}</p>
               </div>
             </div>
           </div>
