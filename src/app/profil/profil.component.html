@@ -1,6 +1,8 @@
 <div class="profil-container">
     <div class="profil-header">
-      <img [src]="user?.profile_pic_url" alt="Profil Picture" class="profil-pic">
+      <img [src]="user?.profile_pic_url" *ngIf="this.user?.profile_pic_url" alt="Profile Picture" class="profil-pic">
+      <img src="/assets/profile.png" *ngIf="!this.user?.profile_pic_url" alt="Profile Picture" class="profil-pic">
+      
       <h2>{{ user?.firstname }} {{ user?.lastname }}</h2>
       <p>{{ user?.bio }}</p>
     </div>

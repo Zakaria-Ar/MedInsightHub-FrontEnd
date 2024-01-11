@@ -24,14 +24,14 @@
   .online-status {
     font-size: 0.9em;
     color: #fff;
-    background-color: #4CAF50;
+    background-color: #08840c;
     padding: 5px 10px;
     border-radius: 15px;
   }
   .offline-status {
     font-size: 0.9em;
     color: #fff;
-    background-color: #f44336; 
+    background-color: #e04526; 
     padding: 5px 10px;
     border-radius: 15px;
   }
@@ -43,7 +43,7 @@
     padding: 12px;
     margin-top: 20px;
     font-size: 1em;
-    background-color: #4CAF50;
+    background-color: #FF9900;
     color: white;
     border: none;
     border-radius: 5px;
@@ -52,6 +52,6 @@
   }
   
   .navigate-button:hover {
-    background-color: #43A047;
+    background-color: #FF9900;
   }
   

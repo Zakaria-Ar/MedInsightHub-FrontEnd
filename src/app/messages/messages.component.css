@@ -9,6 +9,7 @@
   border-radius: 4px;
   padding: 1rem;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .message-header {
@@ -40,7 +41,7 @@
 
 .btn-new-message {
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #ff9900;
   color: white;
   border: none;
   border-radius: 4px;
@@ -49,5 +50,5 @@
 }
 
 .btn-new-message:hover {
-  background-color: darken(#4CAF50, 10%);
+  background-color: darken(#FF9900, 10%);
 }

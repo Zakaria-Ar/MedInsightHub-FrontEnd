@@ -37,11 +37,14 @@
     background-color: #f5f5f5;
     margin-bottom: 10px;
     padding: 10px;
-    border-left: 5px solid #4CAF50;
+    border-left: 5px solid #FF9900;
     cursor: pointer;
   }
   
   .notification-item:hover {
     background-color: #e8e8e8;
+  }
+  h2 {
+    color: white;
   }
   
