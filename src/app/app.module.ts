@@ -26,6 +26,7 @@ import { CasesComponent } from './cases/cases.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     CasesComponent,
     RegistrationComponent,
     LoginComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    MyPostsComponent
   ],
   imports: [
     BrowserModule,

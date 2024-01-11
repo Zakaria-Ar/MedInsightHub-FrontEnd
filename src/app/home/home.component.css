@@ -106,3 +106,13 @@ h2{
 .viewed, .liked{
   background-color: red;
 }
+.btn-secondary {
+  background-color: #FF9900;
+  border-color: #FF9900;
+}
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+  background-color: darken(#FF9900, 10%);
+  border-color: darken(#FF9900, 10%);
+}

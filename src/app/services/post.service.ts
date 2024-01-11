@@ -32,4 +32,8 @@ export class PostService {
       headers: new HttpHeaders({"Authorization": "Bearer " + this.getToken()})
     });
   }
+  getMyPosts(): Observable<any[]> { // replace 'any[]' with the appropriate type
+    const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + this.getToken() });
+    return this.http.get<any[]>(`${this.apiUrl}/my-posts`, { headers });
+  }
 }

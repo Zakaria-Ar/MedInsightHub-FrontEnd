@@ -17,6 +17,7 @@ import { CasesComponent } from './cases/cases.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
 
 const routes: Routes = [
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'create-post', component: CreatePostComponent },
   { path: 'search-results', component: SearchResultsComponent },
+  { path: 'my-posts', component: MyPostsComponent },
   { path: 'home', component: HomeComponent },
   { path: 'messages', component: MessagesComponent },
   { path: 'new-message', component: NewMessageComponent },
