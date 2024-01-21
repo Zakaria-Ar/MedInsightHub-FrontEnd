@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { PostService } from '../services/post.service';
-import { homePosts } from '../models/homePosts.model'
+import { homePosts } from '../models/homePosts.model';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +24,9 @@ export class HomeComponent implements OnInit {
     } else {
       this.postService.getPosts().subscribe(
         (data: any) => {
-          this.posts = data;
+          this.posts = data.sort((a: homePosts, b: homePosts) => {
+            return new Date(b.date_posted).getTime() - new Date(a.date_posted).getTime();
+          });
         },
         error => {
           console.error('Error fetching posts:', error);
