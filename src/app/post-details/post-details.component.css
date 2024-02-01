@@ -1,70 +1,72 @@
-/* post-details.component.css */
 .post-detail-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background: #f8f8f8;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .post-title {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .post-meta {
-    font-style: italic;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  
-  .post-content {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  .post-interactions button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-    padding: 5px 10px;
-    margin-right: 10px;
-    color: #0cce6b;
-    transition: color 0.3s ease;
-  }
-  
-  .post-interactions button:hover {
-    color: #09a357;
-  }
-  
-  .post-tags .tag {
-    display: inline-block;
-    background-color: #eef;
-    color: #557;
-    padding: 3px 8px;
-    margin-right: 5px;
-    border-radius: 4px;
-    font-size: 0.85em;
-  }
-  .post-interactions {
-    margin-top: 20px;
-  }
-  
-  .post-interactions .like, .post-interactions .comments {
-    cursor: pointer;
-    background-color: #0cce6b;
-    color: white;
-    padding: 5px 10px;
-    margin-right: 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-  }
-  
-  .post-interactions .like:hover, .post-interactions .comments:hover {
-    background-color: #09a357;
-  }
-    
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-detail-container:hover {
+  background-color: #f3f3f3;
+}
+
+.post-title {
+  font-size: 2em;
+  color: black; /* Couleur du titre */
+  margin-bottom: 10px;
+}
+
+.post-meta {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.post-content {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-top: 15px; /* Marge supérieure pour le contenu */
+}
+
+.post-tags .tag {
+  display: inline-block;
+  background-color: #FF9900; /* Couleur de fond des tags */
+  color: black; /* Couleur du texte des tags */
+  padding: 3px 8px;
+  margin-right: 5px;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.post-interactions {
+  margin-top: 20px;
+}
+
+.post-interactions .like, .post-interactions .comments {
+  cursor: pointer;
+  background-color: #FF9900; /* Couleur de fond pour les boutons d'interaction */
+  color: white;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.post-interactions .like:hover, .post-interactions .comments:hover {
+  background-color: darken(#FF9900, 10%); /* Fonction darken pour le survol */
+}
+
+.comments-section h3 {
+  color: #333; /* Couleur pour les titres des sections de commentaires */
+  margin-bottom: 10px;
+}
+
+.comments-section {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #f8f8f8; /* Fond pour la section des commentaires */
+  border-radius: 8px;
+}
