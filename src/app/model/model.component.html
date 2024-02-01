@@ -1,13 +1,12 @@
 <div class="model-container">
-    <h2>ALEA Model to interpret the blood analysis from the image</h2>
-    <div class="form-group">
-      <label for="imageInput">Upload Image</label>
-      <input type="file" class="form-control" id="imageInput" name="imageInput">
-    </div>
-    <button class="btn-submit" (click)="onSubmit()">Submit</button>
-    <div class="result-group">
-      <label for="resultText">Result</label>
-      <textarea id="resultText" class="form-control result-text" readonly></textarea>
-    </div>
+  <h2>ALEA Model to interpret the blood analysis from the image</h2>
+  <div class="form-group">
+    <label for="imageInput">Upload Image</label>
+    <input type="file" class="form-control" id="imageInput" name="imageInput">
   </div>
-  
+  <button class="btn-submit" (click)="onSubmit()">Submit</button>
+  <div class="result-group">
+    <label for="resultText">Result</label>
+    <textarea id="resultText" class="form-control result-text" readonly>{{ resultText }}</textarea>
+  </div>
+</div>
