@@ -48,7 +48,7 @@ export class ConversationComponent implements OnInit {
         user_sender: { user_id: 2, username: 'JaneDoe' },
         user_receiver: { user_id: 1, username: 'JohnDoe' },
         date_sent: new Date(),
-        text_message: 'Hi John, how are you?',
+        text_message: 'Hello, I have a medical question.',
       },
       // Add other mock messages here
     ];

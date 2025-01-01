@@ -44,18 +44,18 @@ export class PostDetailsComponent implements OnInit {
     const posts: Post[] = [
       {
         post_id: 1,
-        doctor_firstname: 'Emma',
-        doctor_lastname: 'Brown',
-        title: 'Latest Advances in Cardiology',
-        post_type: 'Research',
+        doctor_firstname: 'Mohamed',
+        doctor_lastname: 'AOUNTI',
+        title: 'Understanding Blood Analysis Results',
+        post_type: 'Discussion',
         post_status: 'Published',
-        tags: ['Heart', 'Cardiology', 'Health'],
-        views_count: 150,
-        likes_count: 75,
-        comments_count: 12,
-        date_posted: new Date('2024-01-15'),
-        content: 'An in-depth look at the latest research in cardiology...'
-      },
+        tags: ['Blood Test', 'Health', 'Diagnosis'],
+        views_count: 120,
+        likes_count: 5,
+        comments_count: 2,
+        date_posted: new Date('2024-01-30'),
+        content: 'Blood tests are fundamental to diagnose and monitor health conditions. A Complete Blood Count (CBC) provides valuable information about your health, such as the levels of red blood cells, which carry oxygen; white blood cells, which fight infection; and platelets, which help with blood clotting. Abnormalities in these counts can indicate various health issues, from infections to anemia. Understanding these results can empower patients to take proactive steps in managing their health.'
+      },    
       {
         post_id: 2,
         doctor_firstname: 'James',

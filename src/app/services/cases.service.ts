@@ -29,8 +29,8 @@ export class CasesService {
     },
     {
       case_id: 2,
-      content: 'Ana skrana',
-      documentUrl: 'sir tn3ss a 3chiri',
+      content: 'Case Content 1',
+      documentUrl: 'url-to-document-2',
       status: CaseStatus.Pending
     },
     // ... more mock cases

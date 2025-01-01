@@ -12,7 +12,7 @@
       <p><strong>Email:</strong> {{ user?.email }}</p>
       <p><strong>User Type:</strong> {{ user?.user_type }}</p>
       <p><strong>Registered:</strong> {{ user?.registration_date | date: 'mediumDate' }}</p>
-      <p><strong>Connections:</strong> {{ user?.connections_count }}</p>
+      <p><strong>Connections:</strong> 3</p>
       <div *ngIf="user?.user_type === 0">
         <p><strong>Specialty:</strong> {{ user?.doctor_specialty }}</p>
         <p><strong>Years of Experience:</strong> {{ user?.doctor_years_of_experience }}</p>

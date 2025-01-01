@@ -36,5 +36,4 @@ export class PostService {
     const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + this.getToken() });
     return this.http.get<any[]>(`${this.apiUrl}/my-posts`, { headers });
   }
-  
 }

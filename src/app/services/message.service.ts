@@ -8,10 +8,10 @@ export class MessageService {
   private messages = [
     {
       message_id: 1,
-      user_sender: { user_id: 2, username: 'JaneDoe' },
-      user_receiver: { user_id: 1, username: 'DahaANA' },
+      user_sender: { user_id: 1, username: 'JaneDoe' },
+      user_receiver: { user_id: 2, username: 'Johwwi' },
       date_sent: new Date(),
-      text_message: 'Hi Meryama, how are you?',
+      text_message: 'Hello, I have a medical question.',
       message_received: true,
       message_received_at: new Date(),
       message_read: false,
@@ -21,10 +21,10 @@ export class MessageService {
     },
     {
       message_id: 2,
-      user_sender: { user_id: 4, username: 'AOUINTI' },
-      user_receiver: { user_id: 3, username: 'DahaANA' },
+      user_sender: { user_id: 3, username: 'aounti21' },
+      user_receiver: { user_id: 4, username: 'Johwwi' },
       date_sent: new Date(),
-      text_message: 'Salam ach kat3awdi?',
+      text_message: 'Hi there, I need some medical advice.',
       message_received: true,
       message_received_at: new Date(),
       message_read: false,
@@ -34,17 +34,18 @@ export class MessageService {
     },
     {
       message_id: 3,
-      user_sender: { user_id: 5, username: 'LEMNYA' },
-      user_receiver: { user_id: 6, username: 'DahaANA' },
+      user_sender: { user_id: 6, username: 'mrida789' },
+      user_receiver: { user_id: 5, username: 'Johwwi' },
       date_sent: new Date(),
-      text_message: 'wa mrida dyali ch7al hadi machftk?',
+      text_message: 'Hello, I\'m experiencing some health issues.',
       message_received: true,
       message_received_at: new Date(),
       message_read: false,
       message_read_at: null,
       replies_to_message: false,
       reply_to_message_id: null
-    },
+    }
+    ,
     // ... more mock messages
   ];
 
